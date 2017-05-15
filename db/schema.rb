@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170515061713) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "name"
-    t.integer  "tel"
+    t.string   "tel"
     t.string   "email"
     t.text     "description"
     t.datetime "created_at",  null: false
