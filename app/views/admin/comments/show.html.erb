@@ -1,0 +1,10 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("Delete", admin_comment_path(@comment),    class: "btn btn-sm btn-default",
+                method: :delete, data: { confirm: "Are you sure?" } )%>
+  </div>
+  <h2><%= @comment.name %></h2>
+  <p><%= @comment.tel %></p>
+  <p><%= @comment.email %></p>
+  <p><%= @comment.description %></p>
+</div>

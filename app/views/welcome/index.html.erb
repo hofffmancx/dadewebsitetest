@@ -1,1 +1,22 @@
-<h1>Hello<h1>
+<h1>Hello</h1>
+
+<h3>Comments</h3>
+<%= simple_form_for [@comment] do |f| %>
+
+<div class="group">
+  <%= f.input :name %>
+</div>
+
+<div class="group">
+  <%= f.input :tel %>
+</div>
+
+<div class="group">
+  <%= f.input :email %>
+</div>
+
+<div class="group">
+  <%= f.input :description %>
+</div>
+<%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+<% end %>

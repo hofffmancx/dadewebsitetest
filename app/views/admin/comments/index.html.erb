@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>Name</td>
+        <td>Tel</td>
+        <td>Email</td>
+        <td>Created</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @comments.each do |comment| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(comment.name, admin_comment_path(comment)) %></td>
+          <td><%= comment.tel %></td>
+          <td><%= comment.email %></td>
+          <td><%= comment.created_at %></td>
+          <td>
+              <%= link_to("Delete", admin_comment_path(comment),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
