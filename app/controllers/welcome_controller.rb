@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+layout 'welcome'
   def index
     @comment = Comment.new
   end

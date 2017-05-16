@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dadewebsite</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <%= render "common/navbar" %>
+      <%= render "common/flashes" %>
+      </div>
+      <div class="list_group col-md-2">
+        <ul class="nav nav-pills nav-atacked" >
+          <li> <%= link_to("产品管理", admin_products_path, class: "list-group-item active") %> </li>
+          <li> <%= link_to("信息管理", admin_messages_path, class: "list-group-item") %> </li>
+          <li> <%= link_to("留言管理", admin_comments_path, class: "list-group-item") %> </li>
+        </ul>
+      </div>
+      <div class="container-fluid col-sm-10">
+        <%= yield %>
+      </div>  
+    <%= render "common/footer" %>
+  </body>
+</html>
