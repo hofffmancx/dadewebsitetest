@@ -10,5 +10,9 @@ Rails.application.routes.draw do
 
   resources :products, :messages
 
+  resources :categories do
+    resources :products
+  end
+
   root "welcome#index"
 end

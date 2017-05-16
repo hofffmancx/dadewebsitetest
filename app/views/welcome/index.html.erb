@@ -25,6 +25,7 @@
               <li> <%= link_to("产品管理", admin_products_path) %> </li>
               <li> <%= link_to("信息管理", admin_messages_path) %> </li>
               <li> <%= link_to("留言管理", admin_comments_path) %> </li>
+              <li> <%= link_to("分类管理", categories_path ) %></li>
               <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_admin_session_path, method: :delete) %> </li>
             </ul>
           </li>
