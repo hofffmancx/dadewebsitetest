@@ -1,5 +1,6 @@
+<h1>产品</h1>
 <div class="pull-right">
-  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default" ) %>
+  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-primary btn-default" ) %>
 </div>
 
 <br><br>
@@ -11,7 +12,7 @@
       <%= link_to(product.title, admin_product_path(product)) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_product_path(product)) %> 
+      <%= link_to("Edit", edit_admin_product_path(product)) %>
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
     </td>
     <td>
