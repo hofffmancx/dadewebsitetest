@@ -4,7 +4,8 @@
     <%= f.input :title %>
   </div>
   <div class="group">
-      <%= f.kindeditor :description ,:window_onload => true  %>
+    <%= f.input :description, :as => :kindeditor,
+    :input_html => { :width => 800, :height => 300 } %>
   </div>
 
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
