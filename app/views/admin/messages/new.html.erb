@@ -3,14 +3,22 @@
   <div class="group">
     <%= f.input :title %>
   </div>
-   <div class="group">
-		 <%= select_tag(:kind_id, options_for_select(@kinds),
+  <div class="group">
+    <%= select_tag(:kind_id, options_for_select(@kinds),
      :prompt => "类别") %>
- </div>
+  </div>
+  <div class="group">
+    <%= f.input :is_hidden %>
+  </div>
+  <div class="group">
+    <%= f.input :writer %>
+  </div>
+  <div class="group">
+    <%= f.input :keyword %>
+  </div>
   <div class="group">
     <%= f.input :description, :as => :kindeditor,
     :input_html => { :width => 800, :height => 300 } %>
   </div>
-
   <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
 <% end %>
