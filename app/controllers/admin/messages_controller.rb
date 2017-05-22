@@ -1,7 +1,7 @@
 class Admin::MessagesController < ApplicationController
   before_action :authenticate_admin!
   layout 'admin'
-  
+
   def index
     @messages = Message.all
   end
@@ -12,10 +12,12 @@ class Admin::MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @kinds = Kind.all.map { |c| [c.name, c.id] }
   end
 
   def create
     @message = Message.new(message_params)
+    @message.kind_id = params[:kind_id]
     if @message.save
       redirect_to admin_messages_path
     else
@@ -25,10 +27,12 @@ class Admin::MessagesController < ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+    @kinds = Kind.all.map { |c| [c.name, c.id] }
   end
 
   def update
     @message = Message.find(params[:id])
+    @message.kind_id = params[:kind_id]
     if @message.update(message_params)
       redirect_to admin_messages_path
     else

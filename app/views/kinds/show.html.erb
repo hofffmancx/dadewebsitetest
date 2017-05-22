@@ -1,0 +1,23 @@
+<h3>
+    <strong>分类名称:</strong>
+    <%= @kind.name %>
+</h3>
+<p>
+    <strong>分类描述:</strong>
+    <%= @kind.description %>
+</p>
+<br>
+<h5>
+  此分类下的商品：
+</h5>
+  <% Message.where(kind_id: @kind.id).each do |message| %>
+
+  <li>
+  	  <%= link_to message.title, message_path(message) %>
+	</li>
+	<% end %>
+<br>
+
+	<%= link_to 'Edit', edit_kind_path(@kind) %>
+ |
+	<%= link_to 'Back', kinds_path %>

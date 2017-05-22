@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   get 'comments', to: 'welcome#index'
   post 'comments', to: 'welcome#create'
 
-  resources :products, :messages
+  resources :products, :messages, :kinds, :categories
 
-  resources :categories do
-    resources :products
-  end
+
 
   root "welcome#index"
 end
