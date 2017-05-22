@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :validate_search_key, only: [:search]
   def index
-    @messages = Message.all
+    @messages = Message.where(:is_hidden => false)
   end
 
   def show

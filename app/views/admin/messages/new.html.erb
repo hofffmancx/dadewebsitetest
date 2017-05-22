@@ -7,6 +7,9 @@
 		 <%= select_tag(:kind_id, options_for_select(@kinds),
      :prompt => "类别") %>
  </div>
+ <div class="group">
+   <%= f.input :is_hidden %>
+ </div>
   <div class="group">
     <%= f.input :description, :as => :kindeditor,
     :input_html => { :width => 800, :height => 300 } %>
