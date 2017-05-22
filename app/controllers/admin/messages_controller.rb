@@ -49,6 +49,7 @@ class Admin::MessagesController < ApplicationController
   private
 
     def message_params
-      params.require(:message).permit(:title, :description,)
+      params.require(:message).permit(:title, :description,
+      :kind_id)
     end
 end
