@@ -5,8 +5,8 @@ module MessagesHelper
     highlight(excerpt_cont, query_string)
   end
 
-  def render_job_status(job)
-    if job.is_hidden
+  def render_message_status(message)
+    if message.is_hidden
       "(Hidden)"
     else
       "(Public)"
