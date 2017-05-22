@@ -1,0 +1,24 @@
+<h1>分类</h1>
+<div>
+  <%= link_to('New kind', new_kind_path, class: "btn btn-primary pull-right")%>
+</div>
+<br>
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @kinds.each do |kind| %>
+      <tr>
+        <td><%= link_to kind.name, kind %></td>
+        <td><%= kind.description %></td>
+        <td><%= link_to '编辑', edit_kind_path(kind) %></td>
+        <td><%= link_to '删除', kind, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
