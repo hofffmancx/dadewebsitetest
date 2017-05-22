@@ -7,8 +7,8 @@ layout 'welcome'
   def create
     @comment = Comment.new(comment_params)
     @comment.save
-    flash[:notice] = "成功提交留言"
     redirect_to root_path
+    flash[:notice] = "成功提交留言"
   end
 
 
